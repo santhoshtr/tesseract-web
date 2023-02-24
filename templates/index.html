@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <header>
+            <h1 class="title">Tesseract OCR</h1>
+        </header>
+        <main>
+
+            <section class="container">
+                <section class="drop">
+                    <h1>Drop, paste or upload an image here</h1>
+                    <input id="uploadimage" type="file" name="file" accept="image/*" />
+                    <img id="ocr-img" />
+                </section>
+                <section>
+                    <textarea id="resulttext"></textarea>
+                </section>
+            </section>
+            <section class="action">
+                <label for="source_lang">Choose language
+                <select id="source_lang">
+                    {% for lang in languages %}
+                        {% if lang == "eng" %}
+                        <option value= "{{lang}}" selected>{{lang}}</option>"
+                        {% else %}
+                        <option value= "{{lang}}">{{lang}}</option>"
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                </label>
+                <button onclick="doOCR()">Submit</button>
+            </section>
+        </main>
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+    </body>
+
+</html>
