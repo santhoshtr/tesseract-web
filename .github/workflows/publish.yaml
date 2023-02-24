@@ -14,5 +14,4 @@ jobs:
                      - name: Build the tesseract-ocr-web Docker image
                        run: |
                             docker build . --tag ghcr.io/santhoshtr/tesseract-ocr-web:latest
-                            docker run ghcr.io/santhoshtr/tesseract-ocr-web:latest
                             docker push ghcr.io/santhoshtr/tesseract-ocr-web:latest
