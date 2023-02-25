@@ -14,31 +14,32 @@
             <h1 class="title">Tesseract OCR</h1>
         </header>
         <main>
-
-            <section class="container">
-                <section class="drop">
-                    <h1>Drop, paste or upload an image here</h1>
-                    <input id="uploadimage" type="file" name="file" accept="image/*" />
-                    <img id="ocr-img" />
-                </section>
-                <section>
-                    <textarea id="resulttext"></textarea>
-                </section>
-            </section>
             <section class="action">
                 <label for="source_lang">Choose language
                 <select id="source_lang">
-                    {% for lang in languages %}
-                        {% if lang == "eng" %}
-                        <option value= "{{lang}}" selected>{{lang}}</option>"
+                    {% for code in languages %}
+                        {% if code == "en" %}
+                        <option value= "{{code}}" selected>{{code}} - {{languages[code]}}</option>"
                         {% else %}
-                        <option value= "{{lang}}">{{lang}}</option>"
+                        <option value= "{{code}}">{{code}} - {{languages[code]}}</option>"
                         {% endif %}
                     {% endfor %}
                 </select>
                 </label>
                 <button onclick="doOCR()">Submit</button>
             </section>
+            <section class="container">
+                <section class="drop">
+                    <h1>Drop, paste or upload an image or pdf here</h1>
+                    <input id="uploadimage" type="file" name="file" accept="image/*, application/pdf" />
+                    <embed class="hidden" id="ocr-pdf"/>
+                    <img class="hidden" id="ocr-img" />
+                </section>
+                <section>
+                    <textarea id="resulttext"></textarea>
+                </section>
+            </section>
+
         </main>
         <script src="{{ url_for('static', filename='main.js') }}"></script>
     </body>

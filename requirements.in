@@ -1,12 +1,9 @@
 
-certifi
-Click
 Flask
 gunicorn
-itsdangerous
 Jinja2
-MarkupSafe
-numpy
 pillow
 pytesseract
 werkzeug
+pdf2image
+langcodes[data]

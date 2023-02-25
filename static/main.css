@@ -1,3 +1,25 @@
+:root {
+    --primary-color-h: 192;
+    --primary-color-s: 100%;
+    --primary-color-l: 41%;
+    --primary-color: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-l));
+    --primary-color--dark: hsl(var(--primary-color-h), var(--primary-color-s), calc(var(--primary-color-l) - 30%));
+  }
+
+body {
+    font-size: 16px;
+    margin: 0;
+}
+
+header {
+    padding: 1em;
+    height: 10vh;
+    color: white;
+    background-color: var(--primary-color);
+    justify-content: center;
+    display: grid;
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -17,8 +39,11 @@
     flex-direction: column;
   }
 
+  .hidden {
+    display: none;
+  }
 
-  img {
+  img, embed {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -27,6 +52,7 @@
   textarea {
     width: 100%;
     height: 100%;
+    padding: 0 1em;
   }
 
   .action {
@@ -40,4 +66,7 @@
     width: 100px;
     padding: 5px;
     font-weight: bold;
+    background-color: var(--primary-color);
+border: none;
+color: white;
   }
