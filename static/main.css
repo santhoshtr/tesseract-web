@@ -1,72 +1,90 @@
 :root {
-    --primary-color-h: 192;
-    --primary-color-s: 100%;
-    --primary-color-l: 41%;
-    --primary-color: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-l));
-    --primary-color--dark: hsl(var(--primary-color-h), var(--primary-color-s), calc(var(--primary-color-l) - 30%));
-  }
+  --primary-color-h: 192;
+  --primary-color-s: 100%;
+  --primary-color-l: 41%;
+  --primary-color: hsl(
+    var(--primary-color-h),
+    var(--primary-color-s),
+    var(--primary-color-l)
+  );
+  --primary-color--dark: hsl(
+    var(--primary-color-h),
+    var(--primary-color-s),
+    calc(var(--primary-color-l) - 30%)
+  );
+}
 
 body {
-    font-size: 16px;
-    margin: 0;
+  font-size: 16px;
+  margin: 0;
 }
 
 header {
-    padding: 1em;
-    height: 10vh;
-    color: white;
-    background-color: var(--primary-color);
-    justify-content: center;
-    display: grid;
+  padding: 1em;
+  height: 10vh;
+  color: white;
+  background-color: var(--primary-color);
+  justify-content: center;
+  display: grid;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
 }
 
 .drop {
-    width: 100%;
-    height: 100%;
-    background-color: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease-in-out;
-    font-family: sans-serif;
-    padding: 4px;
-    flex-direction: column;
-  }
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease-in-out;
+  font-family: sans-serif;
+  padding: 4px;
+  flex-direction: column;
+}
 
-  .hidden {
-    display: none;
-  }
+.hidden {
+  display: none;
+}
 
-  img, embed {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+img,
+embed {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-  textarea {
-    width: 100%;
-    height: 100%;
-    padding: 0 1em;
+textarea {
+  width: 100%;
+  height: 100%;
+  padding: 0 1em;
+}
+
+.action {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+button {
+  width: 100px;
+  padding: 5px;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+}
+
+@media (max-width: 450px) {
+  .container {
+    grid-template-columns: 1fr;
   }
 
   .action {
-    padding: 1em;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
+    grid-template-columns: 1fr;
   }
-
-  button {
-    width: 100px;
-    padding: 5px;
-    font-weight: bold;
-    background-color: var(--primary-color);
-border: none;
-color: white;
-  }
+}
