@@ -19,7 +19,11 @@ body {
   margin: 0;
 }
 
-header {
+a {
+  color: white;
+}
+
+header, footer {
   padding: 1em;
   height: 10vh;
   color: white;
