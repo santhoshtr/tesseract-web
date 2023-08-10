@@ -1,9 +1,0 @@
-
-Flask
-gunicorn
-Jinja2
-pillow
-pytesseract
-werkzeug
-pdf2image
-langcodes[data]

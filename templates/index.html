@@ -20,32 +20,33 @@
             <h1 class="title">Tesseract OCR</h1>
         </header>
         <main>
-            <section class="action">
-                <label for="source_lang">Choose language
-                <select id="source_lang">
-                    {% for code in languages %}
-                        {% if code == "en" %}
-                        <option value= "{{code}}" selected>{{code}} - {{languages[code]}}</option>"
-                        {% else %}
-                        <option value= "{{code}}">{{code}} - {{languages[code]}}</option>"
-                        {% endif %}
-                    {% endfor %}
-                </select>
-                </label>
-                <button onclick="doOCR()">Submit</button>
-            </section>
+
             <section class="container">
+
                 <section class="drop">
-                    <h1>Drop, paste or upload an image or pdf here</h1>
+
+                    <select class="languages" id="source_lang">
+                        {% for code in languages %}
+                            {% if code == "en" %}
+                            <option value= "{{code}}" selected>{{code}} - {{languages[code]}}</option>"
+                            {% else %}
+                            <option value= "{{code}}">{{code}} - {{languages[code]}}</option>"
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+
+                    <p>Drop, paste or upload an image or pdf here</p>
                     <input id="uploadimage" type="file" name="file" accept="image/*, application/pdf" />
                     <embed class="hidden" id="ocr-pdf"/>
                     <img class="hidden" id="ocr-img" />
                 </section>
-                <section>
-                    <textarea id="resulttext"></textarea>
+                <section class="result">
+                    <textarea class="resulttext" id="resulttext"></textarea>
                 </section>
             </section>
-
+            <section class="action">
+                <button class="submit" onclick="doOCR()">Submit</button>
+            </section>
         </main>
         <footer>
             <p>Powered by <a href="https://github.com/tesseract-ocr/tesseract">Tesseract OCR.</a>

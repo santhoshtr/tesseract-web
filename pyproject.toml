@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools", "wheel", "hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ocr-web"
+classifiers = ["Private :: Do Not Upload"]
+version = "0"
+requires-python = ">=3.9"
+dependencies = [
+    "Flask",
+    "gunicorn",
+    "Jinja2",
+    "pillow",
+    "pytesseract",
+    "werkzeug",
+    "pdf2image",
+    "langcodes[data]",
+]
+
+
+[project.optional-dependencies]
+dev = [
+    "pip-tools",
+    "isort",
+    "black",
+    "ruff",
+    "tox",
+]
+
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+ignore = [
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
